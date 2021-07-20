@@ -11,8 +11,8 @@ export default class App extends React.Component {
     this.state = {
       todoInput: '',
       todos: [
-        { id: 0, title: 'Take out the trash', done: false },
-        { id: 1, title: 'Cook dinner', done: false }
+        { id: 0, title: 'Pasear al perro', done: false },
+        { id: 1, title: 'Hacer la cena', done: false }
       ]
     }
   }
@@ -20,16 +20,19 @@ export default class App extends React.Component {
   addNewTodo () {
     let todos = this.state.todos;
 
-    todos.unshift({
-      id: todos.length + 1,
-      title: this.state.todoInput,
-      done: false
-    });
-
-    this.setState({
-      todos: todos,
-      todoInput: ''
-    });
+    if(this.state.todoInput != ''){
+      todos.unshift({
+        id: todos.length + 1,
+        title: this.state.todoInput,
+        done: false
+      });
+  
+      this.setState({
+        todos: todos,
+        todoInput: ''
+      });
+    }
+    alert(this.state.todoInput)
   }
 
   toggleDone (item) {
