@@ -32,7 +32,6 @@ export default class App extends React.Component {
         todoInput: ''
       });
     }
-    alert(this.state.todoInput)
   }
 
   toggleDone (item) {
